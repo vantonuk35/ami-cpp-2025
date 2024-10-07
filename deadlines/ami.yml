@@ -5,6 +5,23 @@
     - task: archiver
       score: 1000
 
+- group: 03-classes
+  start: 08-10-2024 13:00
+  deadline: 20-10-2024 23:59
+  tasks:
+    - task: provinces
+      score: 100
+    - task: search
+      score: 150
+    - task: rational
+      score: 100
+    - task: stack
+      score: 100
+    - task: queue
+      score: 150
+    - task: defer
+      score: 250
+
 - group: 02-functions
   start: 19-09-2024 23:59
   deadline: 03-10-2024 23:59
