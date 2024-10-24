@@ -78,7 +78,7 @@ class ArchiverTester:
     def test_compression_decompression(self, name):
         try:
             test_case_data_dir = self.get_test_case_data_dir(name)
-            input_files = os.listdir(test_case_data_dir)
+            input_files = [os.path.join(test_case_data_dir, file) for file in os.listdir(test_case_data_dir)]
 
             with tempfile.NamedTemporaryFile() as output_file:
                 subprocess.check_call([self.archiver_executable, "-c", output_file.name] + input_files)
