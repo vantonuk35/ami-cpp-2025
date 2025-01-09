@@ -1,13 +1,13 @@
 - group:    99-project
-  start:    07-03-2024 00:00
-  deadline: 29-03-2024 06:07
+  start:    07-10-2024 00:00
+  deadline: 31-10-2024 23:59
   tasks:
-    - task: image_processor
+    - task: archiver
       score: 1000
 
-- group: 03-homework-three
-  start: 27-02-2024 13:00
-  deadline: 13-03-2024 23:59
+- group: 03-classes
+  start: 08-10-2024 13:00
+  deadline: 20-10-2024 23:59
   tasks:
     - task: provinces
       score: 100
@@ -19,11 +19,12 @@
       score: 100
     - task: queue
       score: 150
+    - task: defer
+      score: 250
 
-
-- group: 02-homework-two
-  start: 05-02-2024 00:00
-  deadline: 19-02-2024 23:59
+- group: 02-functions
+  start: 19-09-2024 23:59
+  deadline: 03-10-2024 23:59
   tasks:
     - task: sort_students
       score: 100
@@ -36,10 +37,9 @@
     - task: unixpath
       score: 150
 
-
 - group: 01-intro
-  start: 24-01-2024 10:50
-  deadline: 07-02-2024 23:59
+  start: 10-09-2024 13:00
+  deadline: 23-09-2024 23:59
   tasks:
     - task: next_even
       score: 100
@@ -57,7 +57,6 @@
       score: 200
     - task: password
       score: 200
-
 
 - group:    00-setup
   start:    12-01-2024 00:00
