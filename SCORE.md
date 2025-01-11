@@ -2,7 +2,7 @@
 
 Общая формула оценки:
 
-![encoding](https://latex.codecogs.com/svg.image?0.6%20H%20+%200.3%20P%20+%200.1S)
+![encoding](https://latex.codecogs.com/svg.image?0.4%20H%20+%200.5%20P%20+%200.1S)
 
 где
 - ![encoding](https://latex.codecogs.com/svg.image?H) - оценка за домашние задания
@@ -23,7 +23,7 @@
  Оценки за недельные ДЗ нормируются до `10` и вычисляются по формуле:
 
   ![encoding](https://latex.codecogs.com/svg.image?\frac{Sum_{week}}{Max}&space;\times&space;10), где ![encoding](https://latex.codecogs.com/svg.image?Sum_{week}) - число набранных студентом баллов за недельное ДЗ, ![encoding](https://latex.codecogs.com/svg.image?Max) - максимально возможное число баллов за задачи недели
-  
+
 Итоговый балл за ДЗ ![encoding](https://latex.codecogs.com/svg.image?H) является средней оценкой за недельные ДЗ и вычисляется по формуле:
 
   ![encoding](https://latex.codecogs.com/svg.image?\frac{Sum_{total}}{Weeks}), где ![encoding](https://latex.codecogs.com/svg.image?Sum_{total}) - сумма оценок за все недельные ДЗ, ![encoding](https://latex.codecogs.com/svg.image?Weeks) - количество выданных недельных ДЗ
