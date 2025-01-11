@@ -1,5 +1,7 @@
 grade:
   image: cr.yandex/crppmgcujiph4hvf0dup/hse-cxx-base-testenv
+  tags:
+    - solution
   only:
     - /^submits/.*$/
   script:
