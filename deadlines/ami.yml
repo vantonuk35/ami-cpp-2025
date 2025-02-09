@@ -1,12 +1,20 @@
-- group:    00-setup
-  start:    12-01-2025 00:00
-  deadline: 31-03-2025 23:59
+- group: 02-functions
+  start: 10-02-2025 01:00
+  deadline: 24-02-2025 23:59
   tasks:
-    - task: multiplication
+    - task: sort_students
       score: 100
+    - task: tests_checking
+      score: 100
+    - task: admission
+      score: 150
+    - task: scorer
+      score: 150
+    - task: unixpath
+      score: 150
 
 - group: 01-intro
-  start: 28-01-2025 13:00
+  start:    28-01-2025 13:00
   deadline: 11-02-2025 23:59
   tasks:
     - task: next_even
@@ -25,3 +33,10 @@
       score: 200
     - task: password
       score: 200
+
+- group:    00-setup
+  start:    12-01-2025 00:00
+  deadline: 31-03-2025 23:59
+  tasks:
+    - task: multiplication
+      score: 100
