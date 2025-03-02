@@ -1,3 +1,10 @@
+- group: 99-project
+  start: 03-03-2025 02:00
+  deadline: 28-03-2025 23:59
+  tasks:
+    - task: image_processor
+      score: 1000
+
 - group: 03-classes-and-templated
   start: 02-03-2025 19:00
   deadline: 16-03-2025 19:00
