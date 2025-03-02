@@ -46,4 +46,4 @@ add_subdirectory(tasks/queue)
 add_subdirectory(tasks/defer)
 
 # project
-add_subdirectory(tasks/archiver)
+add_subdirectory(tasks/image_processor)
