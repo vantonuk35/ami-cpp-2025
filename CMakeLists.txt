@@ -44,6 +44,10 @@ add_subdirectory(tasks/rational)
 add_subdirectory(tasks/stack)
 add_subdirectory(tasks/queue)
 add_subdirectory(tasks/defer)
+add_subdirectory(tasks/minmax)
+add_subdirectory(tasks/rotate)
+add_subdirectory(tasks/remove)
+add_subdirectory(tasks/enumerate)
 
 # project
 add_subdirectory(tasks/archiver)
