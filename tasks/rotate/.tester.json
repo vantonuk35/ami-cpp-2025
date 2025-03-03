@@ -1,6 +1,6 @@
 {
-    "allow_change": "minmax.h",
-    "tests": "test_minmax",
+    "allow_change": "rotate.h",
+    "tests": "test_rotate",
     "solutions": "private"
   }
   
