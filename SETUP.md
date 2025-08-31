@@ -35,7 +35,7 @@
 
 1. Склонируйте ваш приватный репозиторий. Ссылку для клонирования можно найти, нажав на синюю кнопку `Clone -> Clone with SSH` в интерфейсе репозитория. Команда будет иметь вид
    ```
-   git clone git@gitlab.cpp-hse.net:hse-base-cxx-2024/ami-221-1-Vasya-Pupkin-vpupkin.git
+   git clone git@gitlab.cpp-hse.net:hse-base-cxx-20XX/ami-221-1-Vasya-Pupkin-vpupkin.git
    ```
 
    Команда `git clone` создаст директорию вида `ami-221-1-Vasya-Pupkin-vpupkin` и запишет туда все файлы из этого репозитория.
