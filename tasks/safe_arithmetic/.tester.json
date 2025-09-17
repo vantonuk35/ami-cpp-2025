@@ -1,0 +1,5 @@
+{
+  "allow_change": ["safe_arithmetic.cpp"],
+  "tests": "test_safe_arithmetic",
+  "solutions": ["safe_arithmetic.cpp"]
+}

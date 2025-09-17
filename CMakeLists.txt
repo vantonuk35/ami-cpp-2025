@@ -29,6 +29,7 @@ add_subdirectory(tasks/palindrome)
 add_subdirectory(tasks/password)
 add_subdirectory(tasks/varint)
 add_subdirectory(tasks/bitops)
+add_subdirectory(tasks/safe_arithmetic)
 
 
 # 2
