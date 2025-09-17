@@ -27,6 +27,8 @@ add_subdirectory(tasks/fibonacci)
 add_subdirectory(tasks/reduce_fraction)
 add_subdirectory(tasks/palindrome)
 add_subdirectory(tasks/password)
+add_subdirectory(tasks/varint)
+add_subdirectory(tasks/bitops)
 
 
 # 2
