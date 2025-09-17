@@ -9,7 +9,7 @@ public:
     {}
 
     ~AreYouFastEnough() {
-        REQUIRE(std::clock() - start_ < CLOCKS_PER_SEC / 10000);
+        CHECK(std::clock() - start_ < CLOCKS_PER_SEC / 10000);
     }
 
 private:
