@@ -81,12 +81,14 @@ uint32_t CountLeadingZeros(uint64_t value) {
 
 uint64_t RotateLeft(uint64_t value, uint32_t shift) {
     shift %= std::numeric_limits<uint64_t>::digits;
-    return (value << shift) | (value >> ((std::numeric_limits<uint64_t>::digits - shift)) % std::numeric_limits<uint64_t>::digits);
+    return (value << shift) |
+           (value >> ((std::numeric_limits<uint64_t>::digits - shift)) % std::numeric_limits<uint64_t>::digits);
 }
 
 uint64_t RotateRight(uint64_t value, uint32_t shift) {
     shift %= std::numeric_limits<uint64_t>::digits;
-    return (value >> shift) | (value << ((std::numeric_limits<uint64_t>::digits - shift)) % std::numeric_limits<uint64_t>::digits);
+    return (value >> shift) |
+           (value << ((std::numeric_limits<uint64_t>::digits - shift)) % std::numeric_limits<uint64_t>::digits);
 }
 
 bool IsPowerOfTwo(uint64_t value) {
