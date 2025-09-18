@@ -1,0 +1,5 @@
+{
+  "allow_change": ["fp16.cpp"],
+  "tests": "test_fp16",
+  "solutions": ["fp16.cpp"]
+}

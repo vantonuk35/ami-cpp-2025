@@ -30,6 +30,7 @@ add_subdirectory(tasks/password)
 add_subdirectory(tasks/varint)
 add_subdirectory(tasks/bitops)
 add_subdirectory(tasks/safe_arithmetic)
+add_subdirectory(tasks/fp16)
 
 
 # 2
