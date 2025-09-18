@@ -10,7 +10,7 @@ size_t DecodeVarint(const uint8_t* data, size_t size, uint64_t& result) {
             if ((data[current_block] & (1 << bit_offset)) == 0) {
                 continue;
             }
-            if (bit_offset + current_block * BLOCK_SIZE >= RESULT_SIZE ) {
+            if (bit_offset + current_block * BLOCK_SIZE >= RESULT_SIZE) {
                 return 0;
             }
             tmp |= (1ull << (bit_offset + current_block * BLOCK_SIZE));
