@@ -1,3 +1,16 @@
+- group: 01-numbers
+  start:    18-09-2025 09:00
+  deadline: 01-10-2025 23:59
+  tasks:
+    - task: varint
+      score: 100
+    - task: bitops
+      score: 100
+    - task: safe_arithmetic
+      score: 100
+    - task: fp16
+      score: 100
+
 - group:    00-setup
   start:    05-09-2025 00:00
   deadline: 31-12-2025 23:59
