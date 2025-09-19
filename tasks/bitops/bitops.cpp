@@ -8,37 +8,44 @@
  * for reverse functions using magic masks
  */
 struct ParityTable {
-    constexpr ParityTable() : mask() {
+    constexpr ParityTable() : mask(), shifts() {
         for (size_t i = 0; i < IntegerSizeLog; i++) {
             for (size_t j = 0; j < std::numeric_limits<uint64_t>::digits; j++) {
                 if (j & (1ull << i)) {
                     mask[i] |= (1ull << j);
                 }
             }
+            shifts[i] = (1ull << i);
         }
     }
-    constexpr static int IntegerSizeLog = 6;
+    constexpr static size_t IntegerSizeLog = 6;
     uint64_t mask[IntegerSizeLog];
-    constexpr static int BiggerThanByte = 3;
+    uint64_t shifts[IntegerSizeLog];
+    constexpr static size_t BiggerThanByte = 3;
 };
+namespace {
 constexpr ParityTable MagicSource;
+}
 uint64_t SwapBytes(uint64_t value) {
     for (size_t i = MagicSource.BiggerThanByte; i < MagicSource.IntegerSizeLog; i++) {
-        value = ((value & MagicSource.mask[i]) >> (1ull << i)) | ((value & ~MagicSource.mask[i]) << (1 << i));
+        value = ((value & MagicSource.mask[i]) >> MagicSource.shifts[i]) |
+                ((value & ~MagicSource.mask[i]) << MagicSource.shifts[i]);
     }
     return value;
 }
 
 uint64_t ReverseBits(uint64_t value) {
     for (size_t i = 0; i < MagicSource.IntegerSizeLog; i++) {
-        value = ((value & MagicSource.mask[i]) >> (1ull << i)) | ((value & ~MagicSource.mask[i]) << (1 << i));
+        value = ((value & MagicSource.mask[i]) >> MagicSource.shifts[i]) |
+                ((value & ~MagicSource.mask[i]) << MagicSource.shifts[i]);
     }
     return value;
 }
 
 uint64_t ReverseBitsInBytes(uint64_t value) {
     for (size_t i = 0; i < MagicSource.BiggerThanByte; i++) {
-        value = ((value & MagicSource.mask[i]) >> (1ull << i)) | ((value & ~MagicSource.mask[i]) << (1 << i));
+        value = ((value & MagicSource.mask[i]) >> MagicSource.shifts[i]) |
+                ((value & ~MagicSource.mask[i]) << MagicSource.shifts[i]);
     }
     return value;
 }
@@ -99,11 +106,11 @@ uint64_t RoundUpToPowerOfTwo(uint64_t value) {
     if (CountLeadingZeros(value) == 0 && CountSetBits(value) > 1) {
         return 0;
     }
-    int i = 0;
-    while ((1ull << i) < value) {
-        ++i;
+    uint64_t result = 1;
+    while (result < value) {
+        result <<= 1;
     }
-    return (1ull << i);
+    return result;
 }
 
 uint64_t AlignDown(uint64_t value, uint64_t alignment) {
