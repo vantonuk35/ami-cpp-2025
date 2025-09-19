@@ -1,21 +1,18 @@
 #include "varint.h"
 
 size_t DecodeVarint(const uint8_t* data, size_t size, uint64_t& result) {
-    constexpr size_t BlockSize = 7;
-    constexpr size_t ResultSize = 64;
+    static constexpr size_t BlockSize = 7;
+    static constexpr size_t ContinuationBit = (1 << BlockSize);
+    static constexpr size_t ValuableMask = ContinuationBit - 1;
+    static constexpr size_t CornerOctet = 9;
     uint64_t tmp = 0;
     size_t current_block = 0;
     while (current_block < size) {
-        for (size_t bit_offset = 0; bit_offset < BlockSize; ++bit_offset) {
-            if ((data[current_block] & (1 << bit_offset)) == 0) {
-                continue;
-            }
-            if (bit_offset + current_block * BlockSize >= ResultSize) {
-                return 0;
-            }
-            tmp |= (1ull << (bit_offset + current_block * BlockSize));
+        if (current_block == CornerOctet && data[current_block] > 1) {
+            return 0;
         }
-        if ((data[current_block++] & (1 << BlockSize)) == 0) {
+        tmp |= (data[current_block] & ValuableMask) << (current_block * BlockSize);
+        if ((data[current_block++] & ContinuationBit) == 0) {
             break;
         }
         if (current_block == size) {
