@@ -9,7 +9,7 @@ float ConvertFloat16ToFloat(uint16_t float16_bits) {
     static constexpr int32_t ExponentSize = 5;
     static constexpr int32_t ExponentBias = 15;
     static constexpr int32_t MantissaMask = (1 << MantissaSize) - 1;
-    static constexpr int32_t ExponentMask = (1 << MantissaSize) - 1;
+    static constexpr int32_t ExponentMask = (1 << ExponentSize) - 1;
     static constexpr float MantissaMax = 1024.f;
     static constexpr uint32_t NanExponent = 0b11111;
 
