@@ -1,6 +1,9 @@
 #include "varint.h"
 
 size_t DecodeVarint(const uint8_t* data, size_t size, uint64_t& result) {
+    if (!data) {
+        return 0;
+    }
     static constexpr size_t BlockSize = 7;
     static constexpr size_t ContinuationBit = (1 << BlockSize);
     static constexpr size_t ValuableMask = ContinuationBit - 1;
