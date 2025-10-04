@@ -52,6 +52,7 @@ add_subdirectory(tasks/minmax)
 add_subdirectory(tasks/rotate)
 add_subdirectory(tasks/remove)
 add_subdirectory(tasks/enumerate)
+add_subdirectory(tasks/lru_cache)
 
 # project
 add_subdirectory(tasks/image_processor)
