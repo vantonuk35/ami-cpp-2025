@@ -142,6 +142,14 @@ TEST_CASE("DecodeVarint - Error cases") {
         CHECK(consumed == 0);
         CHECK(result == 42);
     }
+
+    SECTION("Invalid varint - 10th byte >1") {
+        uint8_t data[] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x77};
+        uint64_t result = 42;
+        size_t consumed = DecodeVarint(data, sizeof(data), result);
+        CHECK(consumed == 0);
+        CHECK(result == 42);
+    }
 }
 
 TEST_CASE("DecodeVarint - Stream parsing scenarios") {
