@@ -1,9 +1,20 @@
 - group: 99-project
-  start: 03-10-2025 18:00
+  start:    03-10-2025 18:00
   deadline: 24-10-2025 23:59
   tasks:
     - task: image_processor
       score: 1000
+
+- group: 02-classes
+  start:    06-10-2025 09:00
+  deadline: 19-10-2025 23:59
+  tasks:
+    - task: lru_cache
+      score: 100
+    - task: search
+      score: 100
+    - task: http_builder
+      score: 100
 
 - group: 01-numbers
   start:    18-09-2025 09:00
