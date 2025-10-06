@@ -53,6 +53,7 @@ add_subdirectory(tasks/rotate)
 add_subdirectory(tasks/remove)
 add_subdirectory(tasks/enumerate)
 add_subdirectory(tasks/lru_cache)
+add_subdirectory(tasks/http_builder)
 
 # project
 add_subdirectory(tasks/image_processor)
