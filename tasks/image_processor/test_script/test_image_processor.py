@@ -1,14 +1,14 @@
 #!/usr/bin/python3
 
-from collections import namedtuple
-from functools import reduce
-from PIL import Image, ImageChops, UnidentifiedImageError
 import math
 import operator
 import os
 import subprocess
 import sys
 import tempfile
+from PIL import Image, ImageChops, UnidentifiedImageError
+from collections import namedtuple
+from functools import reduce
 
 
 def calc_images_distance(image_path1, image_path2):
@@ -99,7 +99,8 @@ class ImageProcessorTester:
             input_file = os.path.join("test_script", "data", input_file_name)
             expected_output_file = os.path.join("test_script", "data", output_file_name)
 
-            with tempfile.NamedTemporaryFile(suffix=".bmp") as output_file:
+            with tempfile.NamedTemporaryFile(suffix=".bmp", delete= False) as output_file:
+                print(output_file.name)
                 subprocess.check_call([self.image_processor_executable, input_file, output_file.name] + test_case.args,
                                       timeout=180)
 

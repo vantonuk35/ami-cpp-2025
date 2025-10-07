@@ -11,7 +11,8 @@
 Формат BMP поддерживает достаточно много вариаций, но в этом задании будет использоваться
 24-битный BMP без сжатия и без таблицы цветов. Тип используемого `DIB header` - `BITMAPINFOHEADER`.
 
-Пример файла в нужном формате есть в статье на Википедии [в разделе "Example 1"](https://en.wikipedia.org/wiki/BMP_file_format#Example_1)
+Пример файла в нужном формате есть в статье на
+Википедии [в разделе "Example 1"](https://en.wikipedia.org/wiki/BMP_file_format#Example_1)
 и в папке [test_script/data](test_script/data).
 
 При тестировании обязательно обращайте внимание на то, чтобы тестовое изображение
@@ -28,9 +29,11 @@
 При запуске без аргументов программа выводит справку.
 
 ### Пример
+
 `./image_processor input.bmp /tmp/output.bmp -crop 800 600 -gs -blur 0.5`
 
 В этом примере
+
 1. Загружается изображение из файла `input.bmp`
 2. Обрезается до изображения с началом в верхнем левом углу и размером 800х600 пикселей
 3. Переводится в оттенки серого
@@ -73,26 +76,31 @@ C[x][y] =
 ### Список базовых фильтров
 
 #### Crop (-crop width height)
+
 Обрезает изображение до заданных ширины и высоты. Используется верхняя левая часть изображения.
 
 Если запрошенные ширина или высота превышают размеры исходного изображения, выдается доступная часть изображения.
 
 #### Grayscale (-gs)
+
 Преобразует изображение в оттенки серого по формуле
 
 ![encoding](https://latex.codecogs.com/svg.image?R'%20=%20G'%20=%20B'%20=0.299%20R%20&plus;%200%20.587%20G%20&plus;%200%20.%20114%20B)
 
 #### Negative (-neg)
+
 Преобразует изображение в негатив по формуле
 
 ![encoding](https://latex.codecogs.com/svg.image?R'%20=%201%20-%20R,%20G'%20=%201%20-%20G,%20B'%20=%201%20-%20B)
 
 #### Sharpening (-sharp)
+
 Повышение резкости. Достигается применением матрицы
 
 ![encoding](https://latex.codecogs.com/svg.image?%5Cbegin%7Bbmatrix%7D%20&%20-1%20&%20%20%5C%5C-1%20&%205%20&%20-1%20%5C%5C%20&%20-1%20&%20%20%5C%5C%5Cend%7Bbmatrix%7D)
 
 #### Edge Detection (-edge threshold)
+
 Выделение границ. Изображение переводится в оттенки серого и применяется матрица
 
 ![encoding](https://latex.codecogs.com/svg.image?%5Cbegin%7Bbmatrix%7D%20&%20-1%20&%20%20%5C%5C-1%20&%204%20&%20-1%20%5C%5C%20&%20-1%20&%20%20%5C%5C%5Cend%7Bbmatrix%7D)
@@ -100,6 +108,7 @@ C[x][y] =
 Пиксели со значением, превысившим `threshold`, окрашиваются в белый, остальные – в черный.
 
 #### Gaussian Blur (-blur sigma)
+
 [Гауссово размытие](https://ru.wikipedia.org/wiki/Размытие_по_Гауссу),
 параметр – сигма.
 
@@ -107,7 +116,8 @@ C[x][y] =
 
 ![encoding](https://latex.codecogs.com/svg.image?C%5Bx_0%5D%5By_0%5D%20%3D%20%5Csum_%7Bx%3D0%2Cy%3D0%7D%5E%7Bwidth-1%2C%20height-1%7DC%5Bx%5D%5By%5D%5Cfrac%7B1%7D%7B2%5Cpi%5Csigma%5E2%7De%5E%7B-%5Cfrac%7B%5Cleft%7Cx_o-x%5Cright%7C%5E2%20%26plus%3B%20%5Cleft%7Cy_o-y%5Cright%7C%5E2%7D%7B2%5Csigma%5E2%7D%7D)
 
-Существуют различные варианты релализации и оптимизации вычисления этого фильтра, описание есть [в Википедии](https://ru.wikipedia.org/wiki/Размытие_по_Гауссу).
+Существуют различные варианты релализации и оптимизации вычисления этого фильтра, описание
+есть [в Википедии](https://ru.wikipedia.org/wiki/Размытие_по_Гауссу).
 
 ### Дополнительный фильтр
 
@@ -116,7 +126,8 @@ C[x][y] =
 Фильтр должен быть нетривиальным. Идеи можно взять
 [здесь](https://developer.apple.com/library/mac/documentation/graphicsimaging/reference/CoreImageFilterReference/Reference/reference.html).
 
-Хорошие примеры: [Crystallize](https://developer.apple.com/library/archive/documentation/GraphicsImaging/Reference/CoreImageFilterReference/index.html#//apple_ref/doc/filter/ci/CICrystallize), [Glass Distortion](https://developer.apple.com/library/archive/documentation/GraphicsImaging/Reference/CoreImageFilterReference/index.html#//apple_ref/doc/filter/ci/CIGlassDistortion).
+Хорошие
+примеры: [Crystallize](https://developer.apple.com/library/archive/documentation/GraphicsImaging/Reference/CoreImageFilterReference/index.html#//apple_ref/doc/filter/ci/CICrystallize), [Glass Distortion](https://developer.apple.com/library/archive/documentation/GraphicsImaging/Reference/CoreImageFilterReference/index.html#//apple_ref/doc/filter/ci/CIGlassDistortion).
 
 Выбор собственного фильтра надо согласовать с семинаристом.
 
@@ -126,15 +137,19 @@ C[x][y] =
 
 Применять сторонние библиотеки для работы с изображениями запрещено.
 
-Старайтесь делать все компоненты программы по возможности более универсальными и не привязанными к специфике конкретной задачи.
+Старайтесь делать все компоненты программы по возможности более универсальными и не привязанными к специфике конкретной
+задачи.
 
 Все исключительные ситуации должны корректно обрабатываться с выводом понятного пользователю сообщения об ошибке.
 Для этого используйте механизм [исключений](https://en.cppreference.com/w/cpp/language/throw).
-Никакие сценарии, включая использование файлов с форматом, не соответствующим спецификации, не должны приводить к падению программы.
+Никакие сценарии, включая использование файлов с форматом, не соответствующим спецификации, не должны приводить к
+падению программы.
 
-Для чтения и записи файлов используйте [std::ifstream](https://en.cppreference.com/w/cpp/io/basic_ifstream) и [std::ofstream](https://en.cppreference.com/w/cpp/io/basic_ofstream).
+Для чтения и записи файлов используйте [std::ifstream](https://en.cppreference.com/w/cpp/io/basic_ifstream)
+и [std::ofstream](https://en.cppreference.com/w/cpp/io/basic_ofstream).
 
 Скорее всего, вам понадобятся следующие компоненты:
+
 - Класс, представляющий изображение и обеспечивающий работу с ним
 - Классы для чтения и записи формата BMP
 - Фильтры
@@ -157,6 +172,7 @@ C[x][y] =
 ### Принципы начисления баллов
 
 Минимальная реализация проекта оценивается в **3 балла** и должна содержать:
+
 - Класс для представления цвета
 - Класс для представления изображения
 - Классы или функции для загрузки изображения из формата BMP и сохранения изображения в BMP
@@ -178,6 +194,7 @@ C[x][y] =
 Ваш семинарист поможет с определением достаточности покрытия.
 
 Баллы могут быть сняты за серьезные недочеты, например:
+
 - Отсутствие декомпозиции на файлы, классы, методы и функции
 - Утечки памяти
 - Падение программы
