@@ -3,6 +3,8 @@
 #include <cstddef>
 #include <optional>
 #include <string>
+#include <list>
+#include <unordered_map>
 
 class LRUCache {
 public:
@@ -24,5 +26,11 @@ public:
 
 private:
     size_t capacity_;
-    // Your code goes here
+    using TList = typename std::list<std::pair<std::string, int>>;
+    using TIterator = typename TList::iterator;
+    TList unpinned_;
+    TList pinned_;
+
+    std::unordered_map<std::string, std::pair<TIterator, bool>> helper_;
+    void Propogate(TIterator it, bool pinned);
 };
