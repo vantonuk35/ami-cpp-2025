@@ -1,5 +1,6 @@
 #ifndef IMAGE_H
 #define IMAGE_H
+#include <array>
 #include <cstdint>
 #include <vector>
 #include <valarray>

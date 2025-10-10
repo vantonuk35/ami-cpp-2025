@@ -1,6 +1,8 @@
 #ifndef CPP_HSE_IFILTER_H
 #define CPP_HSE_IFILTER_H
 
+#include <vector>
+#include <string>
 #include "CImage.h"
 
 class IFilter {
