@@ -9,19 +9,12 @@ add_executable(
         IFilter.h
         FilterFabric.cpp
         FilterFabric.h
-        Filters/CropFilter.cpp
-        Filters/CropFilter.h
-        Filters/SharpeningFilter.cpp
-        Filters/SharpeningFilter.h
-        Filters/NegativeFilter.cpp
-        Filters/NegativeFilter.h
-        Filters/GrayscaleFilter.cpp
-        Filters/GrayscaleFilter.h
-        Filters/GaussianFilter.cpp
-        Filters/GaussianFilter.h
-        Filters/EdgeFilter.cpp
-        Filters/EdgeFilter.h
-        Filters/FisheyeFilter.cpp
-        Filters/FisheyeFilter.h
+        CropFilter.cpp
+        SharpeningFilter.cpp
+        NegativeFilter.cpp
+        GrayscaleFilter.cpp
+        GaussianFilter.cpp
+        EdgeFilter.cpp
+        FisheyeFilter.cpp
 )
 

@@ -1,7 +1,7 @@
 #ifndef CPP_HSE_CROPFILTER_H
 #define CPP_HSE_CROPFILTER_H
 
-#include "../IFilter.h"
+#include "IFilter.h"
 
 class CropFilter : virtual public IFilter {
     void PrintManual() override;

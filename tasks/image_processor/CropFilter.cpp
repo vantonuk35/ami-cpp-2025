@@ -1,5 +1,5 @@
 #include "CropFilter.h"
-#include "../FilterFabric.h"
+#include ".FilterFabric.h"
 #include <iostream>
 
 const std::string FILTER_NAME = "crop";

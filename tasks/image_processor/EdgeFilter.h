@@ -1,7 +1,7 @@
 #ifndef CPP_HSE_EDGEFILTER_H
 #define CPP_HSE_EDGEFILTER_H
 
-#include "../IFilter.h"
+#include "IFilter.h"
 
 class EdgeFilter : virtual public IFilter {
     constexpr const static Matrix<3> EdgeMatrix= { {

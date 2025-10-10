@@ -1,7 +1,7 @@
 #ifndef CPP_HSE_FISHEYEFILTER_H
 #define CPP_HSE_FISHEYEFILTER_H
 
-#include "../IFilter.h"
+#include "IFilter.h"
 
 class FisheyeFilter : virtual public IFilter {
     void PrintManual() override;

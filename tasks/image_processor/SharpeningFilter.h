@@ -1,6 +1,6 @@
 #ifndef CPP_HSE_SHARPENINGFILTER_H
 #define CPP_HSE_SHARPENINGFILTER_H
-#include "../IFilter.h"
+#include "IFilter.h"
 
 class SharpeningFilter : virtual public IFilter {
     constexpr const static Matrix<3> SharpeningMatrix= { {
