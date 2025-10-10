@@ -15,12 +15,12 @@ void NegativeFilter::PrintManual() {
     std::cout << "\n";
 }
 void NegativeFilter::Process(CImage &image, const std::vector<std::string> &args) {
-    if(!args.empty()) {
+    if (!args.empty()) {
         throw std::runtime_error("Invalid arguments passed into filter " + FILTER_NAME);
     }
-    for(int32_t y = 0; y < image.GetHeight(); ++y) {
-        for(int32_t x = 0; x < image.GetWidth(); ++x){
-            auto& pixel = image.GetPixel(x, y);
+    for (int32_t y = 0; y < image.GetHeight(); ++y) {
+        for (int32_t x = 0; x < image.GetWidth(); ++x) {
+            auto &pixel = image.GetPixel(x, y);
             pixel.colors = 1 - pixel.colors;
         }
     }

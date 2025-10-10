@@ -15,7 +15,7 @@ void SharpeningFilter::PrintManual() {
     std::cout << "\n";
 }
 void SharpeningFilter::Process(CImage &image, const std::vector<std::string> &args) {
-    if(!args.empty()) {
+    if (!args.empty()) {
         throw std::runtime_error("Invalid arguments passed into filter " + FILTER_NAME);
     }
     ApplyMatrix(image, SharpeningMatrix);

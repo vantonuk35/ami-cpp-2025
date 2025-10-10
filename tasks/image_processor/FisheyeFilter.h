@@ -8,5 +8,4 @@ class FisheyeFilter : virtual public IFilter {
     void Process(CImage& image, const std::vector<std::string>& args) override;
 };
 
-
 #endif  // CPP_HSE_FISHEYEFILTER_H
