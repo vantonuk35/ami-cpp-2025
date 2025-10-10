@@ -16,6 +16,7 @@ void FisheyeFilter::PrintManual() {
     std::cout << "\n";
 }
 void FisheyeFilter::Process(CImage &image, const std::vector<std::string> &args) {
+    constexpr double MagicConstantNeededToDivideByTwoAndGetCenterPosOfImage = 2.0;
     float strength = 0;
     try {
         if (args.size() != 1) {
@@ -26,8 +27,8 @@ void FisheyeFilter::Process(CImage &image, const std::vector<std::string> &args)
         throw std::runtime_error("Invalid arguments passed into filter " + FILTER_NAME);
     }
     CImage res(image.GetWidth(), image.GetHeight());
-    double center_x = image.GetWidth() / 2.0;
-    double center_y = image.GetHeight() / 2.0;
+    double center_x = image.GetWidth() / MagicConstantNeededToDivideByTwoAndGetCenterPosOfImage;
+    double center_y = image.GetHeight() / MagicConstantNeededToDivideByTwoAndGetCenterPosOfImage;
     double max_radius = std::sqrt(center_x * center_x + center_y * center_y);
 
     for (int32_t y = 0; y < image.GetHeight(); ++y) {
