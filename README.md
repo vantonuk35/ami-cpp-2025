@@ -9,3 +9,6 @@
 Правила оценивания в [SCORE.md](SCORE.md).
 
 Темы лекций в [LECTURES.md](LECTURES.md).
+
+
+// Итоговый проект: /tasks/image_processor
